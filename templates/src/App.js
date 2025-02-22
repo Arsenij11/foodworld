@@ -25,7 +25,7 @@ class App extends React.Component {
                             </main>
                         </>
                     } />
-                    <Route path="/dish/:dish_id" element={
+                    <Route path="/dish/:id" element={
                         <>
                             <Header />
                             <main>

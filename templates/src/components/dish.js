@@ -31,7 +31,8 @@ class Dish extends React.Component {
 
     componentDidMount() {
         const params = useParams();
-        axios.get(`http://127.0.0.1:8000/dish/${params.dish_id}`).
+        console.log(params);
+        axios.get(`http://127.0.0.1:8000/dish/${params.id}`).
         catch((error) => {
             this.setState({
                 error_code: error.response?.status || "Ошибка",
