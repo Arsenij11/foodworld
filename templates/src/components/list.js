@@ -20,7 +20,7 @@ class List extends React.Component {
                 })
             }).
         then((response) => {
-            const data = response.json();
+            const data = response.data;
             if (typeof data?.detail === 'undefined') {
                 this.setState({
                     data: data
@@ -38,9 +38,9 @@ class List extends React.Component {
 
     render() {
         const {data, error_code, error_msg} = this.state;
+        console.log(this.state)
 
-
-        if (!error_code || !error_msg) {
+        if (error_code || error_msg) {
             return (
                 <div id="list">
                     <div className="panel"></div>
@@ -75,24 +75,25 @@ class List extends React.Component {
         }
 
 
-        const dishes = document.createElement('div');
-        dishes.setAttribute('className', 'dishes');
+
+        const dishes = [];
 
         for (let d of data) {
-            dishes.innerHTML +=
-                `<div className="list_of_dishes">
+            dishes.push(<div className="list_of_dishes" key={d.id}>
                    <div className="dish">
-                        <h2>${d.name}</h2>
-                        <img src=${d.preview} alt=${d.name} className="photo_of_dish_in_list" />
+                        <h2>{d.name}</h2>
+                        <img src={d.preview} alt={d.name} className="photo_of_dish_in_list"  />
                    </div>
                 </div>
-                `
+            )
         }
 
         return (
             <div id="list">
                 <div className="panel"></div>
-                    {dishes}
+                    <div className="dishes">
+                        {dishes}
+                    </div>
                 <div className="panel"></div>
             </div>
         )

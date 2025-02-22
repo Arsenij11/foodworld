@@ -4,4 +4,4 @@ from .models import Dishes
 class DishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dishes
-        fields = ['name', 'preview']
+        fields = ['id', 'name', 'preview']
