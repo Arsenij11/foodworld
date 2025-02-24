@@ -1,0 +1,5 @@
+.idea
+venv
+dishes/templates
+front/node_modules
+front/.idea

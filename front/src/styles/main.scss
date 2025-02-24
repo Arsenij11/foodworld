@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
+
+$borderright : 1px solid white;
+
+//@mixin document ($backgroundcolor){
+//  background-color: $backgroundcolor;
+//}
+* {
+  margin: 0;
+  padding: 0;
+  //background-color: #fff3f3;
+}
+//#app {
+//  display: grid;
+//  grid-template-rows: 30% auto;
+//}
+main {
+  height: auto;
+  width: 100%;
+}
+header {
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #292929;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  border-bottom: 2px solid white;
+  background-color: #e4d6d6;
+}
+header:hover {
+  cursor: pointer;
+}
+#header {
+  width: 100%;
+  height: 300px;
+  grid-column: span 3;
+  background-color: #222222;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  //margin-left: 15%;
+}
+
+#categories {
+  width: 100%;
+  //height: 100%;
+  background-color: #101010;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  //grid-auto-flow: column;
+  color: white;
+  height: auto;
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  //padding-bottom: 2px;
+  //padding-top: 3px;
+}
+@mixin cats () {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.cat13 {
+  @include cats;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.cat45 {
+  @include cats;
+  grid-template-columns: 1fr 1fr;
+}
+.cat {
+  //border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: $borderright;
+  border-bottom: $borderright;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  //border-right: none;
+  //padding-bottom: 30px;
+  //height: 50%;
+}
+
+.cat:hover {
+  cursor: pointer;
+  background-color: #737373;
+}
+
+@mixin noborder () {
+    border-right: none;
+}
+
+.cat:nth-child(3) {
+  @include noborder;
+}
+.cat:last-child {
+  @include noborder;
+}
+
+
+.img_in_cat {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+#list {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 0.2fr 1fr;
+}
+.list_of_dishes {
+  //display: grid;
+  //grid-template-columns: 30% 40% 30%;
+  //grid-template-rows: 1fr;
+  //background-color: #222222;
+  height: auto;
+  min-height: 500px;
+}
+.list_of_dishes:nth-child(odd) {
+  background-color: #e4d6d6;
+}
+.list_of_dishes:nth-child(odd) > .dish {
+  color: #222222;
+}
+.list_of_dishes:nth-child(even) {
+  background-color: #222222;
+}
+.list_of_dishes:nth-child(even) > .dish {
+  color: white;
+}
+.panel {
+  background-color: #fff5f5;
+  height: auto;
+  min-height: 500px;
+}
+.dish {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  text-align: center;
+  //justify-content: center;
+  align-items: center;
+  color: #ffe9e9;
+  font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  padding-top: 10px;
+  border-top: 1px solid white;
+}
+.dish h3 {
+  justify-self: flex-start;
+  //width: 150px;
+
+}
+.photo_of_dish_in_list {
+  width: 400px;
+  height: 400px;
+  //justify-content: flex-end;
+  margin-top: 45px;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#recept {
+  display: grid;
+  //grid-template-rows: 1fr;
+  grid-template-columns: 10% 80% 10%;
+  font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+ //text-align: center;
+}
+.preparetime {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.time {
+  margin-right: 20px;
+}
+.preparetime img {
+  width: 60px;
+  height: 60px;
+}
+.receptinfo {
+  display: grid;
+  grid-template-rows: 0.1fr 0.3fr 0.6fr 0.2fr 0.4fr 0.2fr;
+}
+.energy {
+  display: grid;
+  grid-template-rows: 20% 80%;
+  text-align: center;
+  margin-top: 40px;
+}
+.energy_info {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  //border-right: 1px solid black;
+}
+.energy_cat {
+  display: flex;
+  font-size: 20px;
+  border-right: 1px solid black;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.energy_cat b {
+  font-size: 20px;
+}
+.energy_cat p {
+  margin-top: 25px;
+}
+.energy_cat:last-child {
+  border-right: none;
+}
+.ingridients {
+  margin-top: 50px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.ingridients h2 {
+  margin-bottom: 25px;
+}
+.ing {
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #acacac;
+}
+.instruction {
+  margin-top: 20px;
+  width: 60%;
+}
+.alg {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.alg li {
+  margin-bottom: 7px;
+}
+//.like img {
+//  width: 80px;
+//  height: 80px;
+//}
+//.list_of_dishes {
+//
+//}
+.change_photo {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+.strelka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strelka img{
+  height: 25%;
+  width: 65%;
+}
+.photos {
+  margin: 20px 0 20px 0;
+  display: grid;
+  grid-template-rows: 0.5fr 0.1fr;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  //width: 50%;
+  //height: 100%;
+  //margin-left: 25%;
+}
+
+@mixin photo () {
+  width: 100%;
+  height: 100%;
+}
+.photo {
+  @include photo;
+  display: inline;
+}
+.photo_none {
+  @include photo;
+  display: none;
+}
+.photo:first-child {
+  grid-column: span 3;
+  //margin-bottom: 5px;
+}
+.ban {
+  cursor: no-drop;
+}
+.move {
+  cursor: pointer;
+}
+.list_of_dishes:hover{
+  cursor: pointer;
+  background-color: #aaaaaa;
+}
+.tolike:hover, .todislike:hover{
+  cursor: pointer;
+}
