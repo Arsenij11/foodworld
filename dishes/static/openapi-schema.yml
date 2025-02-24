@@ -1,0 +1,198 @@
+openapi: 3.0.0    # версия формата
+servers: []       # здесь вы можете указать список ваших серверов
+info:             # общая информация
+  description: API docs of project FoodWorld      # описание
+  version: "1.0.0"                       # версия вашего API
+  title: FoodWorld            # название сервиса
+  contact:                               # ваши контакты
+    email: burkoff.ars@yandex.ru
+paths:                                   # методы вашего API
+  /list:                            # путь к методу
+    get:                                 # поддерживаемый HTTP-метод
+      summary: returns list of all dishes      # краткое описание
+      operationId: returns list of all dishes       # служебное значение
+      description: |                     # описание
+        returns list of all dishes
+      responses:                   # возможные ответы сервера по статусам
+        '200':
+          description: returns list of all dishes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/List_of_dishes'
+  /dish/{number_of_dish}:
+    get:
+      summary: returns info about dish      # краткое описание
+      operationId: returns info about dish       # служебное значение
+      description: |                     # описание
+        returns info about dish
+      parameters:
+        - name : number_of_dish
+          in: path
+          required: true
+          description: 'Number of page'
+          schema:
+              type: integer
+              example : 1
+      responses: # возможные ответы сервера по статусам
+        '200':
+          description: returns info about dish
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Dish'
+  /list/category/{cat_name}:
+    get:
+      summary: returns list of dishes by category      # краткое описание
+      operationId: returns list of dishes by category     # служебное значение
+      description: |                     # описание
+        returns list of dishes by category
+      parameters:
+        - name: cat_name
+          in: path
+          required: true
+          description: 'Category name'
+          schema:
+            type: string
+            example: Desert
+      responses: # возможные ответы сервера по статусам
+        '200':
+          description: returns list of dishes by category
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/List_of_dishes'
+  /rating/{rating}/{dish_id}:
+    put:
+      summary: change rating of dish      # краткое описание
+      operationId: change rating of dish     # служебное значение
+      description: |                     # описание
+        change rating of dish
+      parameters:
+        - name: rating
+          in: path
+          required: true
+          description: 'Rating name: like or dislike'
+          schema:
+            type: string
+            example: like
+      responses: # возможные ответы сервера по статусам
+        '201':
+          description: change rating of dish
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Rating'
+
+components:                # компоненты: к ним можно обращаться через $ref
+  schemas:
+    List_of_dishes:
+      type: object
+      required:
+        - id
+        - name
+        - preview
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Карбонара
+        preview:
+          type: string
+          format: url
+          example: 'http://127.0.0.1:8000/media/photo/preview/images.jpg'
+    Dish:
+      type: object
+      required:
+         - id
+         - name
+         - prepare_time
+         - add_date
+         - like
+         - dislike
+         - calorijnost
+         - belki
+         - zhiry
+         - uglevody
+         - preview
+         - category
+         - ingredients
+         - photo
+         - instruction
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Карбонара
+        prepare_time:
+          type: integer
+          example: 30
+        add_date:
+          type: string
+          example: "2025-02-20 15:25:57.385369+00:00"
+        like:
+          type: integer
+          example: 0
+        dislike:
+          type: integer
+          example: 0
+        calorijnost:
+          type: integer
+          example: 0
+        belki:
+          type: integer
+          example: 0
+        zhiry:
+          type: integer
+          example: 0
+        uglevody:
+          type: integer
+          example: 0
+        preview:
+          type: string
+          format: url
+          example: 'http://127.0.0.1:8000/media/photo/preview/images.jpg'
+        category:
+          type: string
+          example: Desert
+        ingredients:
+          type: array
+          example: [{'id' : 1, 'name': Пармезан, 'count': 200 грамм}]
+        photo:
+          type: array
+          example: [{'id' : 1, 'url' : http://127.0.0.1:8000/media/photo/preview/images.jpg}]
+        instruction:
+          type: array
+          example: [{'id' : 1, 'number' : 1, 'text' : Отварить макароны}]
+    Rating:
+      type: object
+      required:
+        - id
+        - name
+        - like
+        - dislike
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Карбонара
+        like:
+          type: integer
+          example: 0
+        dislike:
+          type: integer
+          example: 0
+
+
