@@ -111,7 +111,7 @@ class List extends React.Component {
                     <div id="header">{category ? 'Категория ' + category : 'Все блюда'}</div>
                     <div className="panel"></div>
                     <div className="dishes">
-                        <div className="list_of_dishes" onClick={(event) => window.location.href = 'http://localhost:5000'}>
+                        <div className="list_of_dishes" onClick={(event) => window.location.href = 'http://localhost:9000'}>
                             <div className="dish">
                                 <h2>{error_code}</h2>
                                 <p>{error_msg}</p>
@@ -146,7 +146,7 @@ class List extends React.Component {
         const dishes = [];
 
         for (let d of data) {
-            dishes.push(<div className="list_of_dishes" key={d.id} onClick={event => window.location.href = `http://localhost:5000/dish/${d.id}`} >
+            dishes.push(<div className="list_of_dishes" key={d.id} onClick={event => window.location.href = `http://localhost:9000/dish/${d.id}`} >
                    <div className="dish">
                         <h2>{d.name}</h2>
                         <img src={d.preview} alt={d.name} className="photo_of_dish_in_list"  />

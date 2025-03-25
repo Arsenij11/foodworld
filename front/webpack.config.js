@@ -30,7 +30,7 @@ module.exports = {
     },
     devServer: {
         static: path.resolve(__dirname, 'dist'),
-        port: 5000,
+        port: 9000,
         hot: true,
         historyApiFallback: true
     },

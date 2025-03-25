@@ -133,7 +133,7 @@ MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
 
 CORS_ALLOWED_ORIGINS = [
-         "http://localhost:5000",
+    "http://localhost:9000",
 ]
 
 REST_FRAMEWORK = {

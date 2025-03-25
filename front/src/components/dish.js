@@ -273,7 +273,7 @@ class Dish extends React.Component {
                         <ol className="alg">
                             {alg}
                         </ol>
-                        <a href={`http://localhost:5000/dishbycat/${category}`}>Посмотреть другие блюда в категории: {catrus}</a>
+                        <a href={`http://localhost:9000/dishbycat/${category}`}>Посмотреть другие блюда в категории: {catrus}</a>
                     </span>
                 </span>
                 <span className="panel"></span>

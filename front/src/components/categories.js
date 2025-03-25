@@ -13,25 +13,25 @@ class Categories extends React.Component {
         return (
                 <div id="categories">
                     <span className="cat13">
-                        <span className="cat" id="Soups" onClick={event => window.location.href = `http://localhost:5000/dishbycat/${event.target.id}`}>
+                        <span className="cat" id="Soups" onClick={event => window.location.href = `http://localhost:9000/dishbycat/${event.target.id}`}>
                             <img src={soup} alt="суп" className='img_in_cat' />
                             <span>Супы</span>
                         </span>
-                        <span className="cat" id="Salads" onClick={event => window.location.href = `http://localhost:5000/dishbycat/${event.target.id}`}>
+                        <span className="cat" id="Salads" onClick={event => window.location.href = `http://localhost:9000/dishbycat/${event.target.id}`}>
                             <img src={salad} alt="салат" className='img_in_cat' />
                             <span>Салаты</span>
                         </span>
-                        <span className="cat" id="Snacks" onClick={event => window.location.href = `http://localhost:5000/dishbycat/${event.target.id}`}>
+                        <span className="cat" id="Snacks" onClick={event => window.location.href = `http://localhost:9000/dishbycat/${event.target.id}`}>
                             <img src={grenky} alt="закуски" className='img_in_cat' />
                             <span>Закуски</span>
                         </span>
                     </span>
                     <span className="cat45">
-                        <span className="cat" id="Meat_dish" onClick={event => window.location.href = `http://localhost:5000/dishbycat/${event.target.id}`}>
+                        <span className="cat" id="Meat_dish" onClick={event => window.location.href = `http://localhost:9000/dishbycat/${event.target.id}`}>
                             <img src={dolma} alt="мясные блюда" className='img_in_cat' />
                             <span>Мясные блюда</span>
                         </span>
-                        <span className="cat" id="Desert" onClick={event => window.location.href = `http://localhost:5000/dishbycat/${event.target.id}`}>
+                        <span className="cat" id="Desert" onClick={event => window.location.href = `http://localhost:9000/dishbycat/${event.target.id}`}>
                             <img src={shtrudel} alt="десерты" className='img_in_cat' />
                             <span>Десерты</span>
                         </span>
